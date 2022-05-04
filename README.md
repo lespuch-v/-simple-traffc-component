@@ -1,5 +1,11 @@
 # SimpleTraffic
 
+https://lespuch-v.github.io/-simple-traffc-component/
+
+![traffic](https://user-images.githubusercontent.com/36127590/166747796-0ea70fc9-5686-4705-a8c9-4a30334415f8.png)
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
 ## Development server
