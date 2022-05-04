@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+$light-blue-white: #e9ecf2;
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: $light-blue-white;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,276 @@
+$dark-blue: #2c3759;
+$neon-green: #14d9b5;
+$light-red: #f2a999;
+$light-green: #a2f2e4;
+$light-blue-white: #daddec;
+
+$dark-red:#E79B86;
+$very-light-red:#FFE8DC;
+
+$rounded-corners-small: 10px;
+$rounded-corners-big: 30px;
+@mixin flexing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ubber-container {
+  margin: 0 auto;
+  width: 1000px;
+  height: 100vh;
+  @include flexing;
+  flex-direction: column;
+}
+.main-container {
+  margin: 0 auto;
+  width: 500px;
+  height: 350px;
+  background-color: white;
+  border-radius: $rounded-corners-small;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.section--two {
+  @include flexing;
+
+  justify-content: right;
+  align-items: center;
+}
+.section--two p {
+  margin: 0 $rounded-corners-small;
+}
+.section--three {
+  @include flexing;
+  justify-content: space-between;
+}
+
+//! ----------------------------- slider - number
+#myRange {
+  margin: 30px 0;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  background: $light-blue-white;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border-radius: $rounded-corners-small;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+// chromium
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  background: hsl(174, 86%, 45%);
+  border-radius: 50%;
+  cursor: pointer;
+  background: url('../assets/images/icon-slider.svg');
+  background-size: 25px; //! - set the size of the icon
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: hsl(174, 86%, 45%);
+
+}
+.slider::-webkit-slider-thumb:hover{
+  box-shadow: hsl(174, 86%, 45%) 0px 7px 17px;
+}
+// firefox
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04aa6d;
+  background-color: red;
+  color: red;
+  cursor: pointer;
+}
+.section--one {
+  display: flex;
+  flex-direction: column;
+}
+.description-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+//! switch ---------------------------
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.swtch {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.swtch:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 6px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .swtch {
+  background-color: #2196f3;
+}
+
+input:focus + .swtch {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .swtch:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.swtch.round {
+  border-radius: 34px;
+}
+
+.swtch.round:before {
+  border-radius: 50%;
+}
+
+//! ----------------------------- list style
+ul {
+  list-style-image: url("/assets/images/icon-check.svg");
+}
+
+//! ----------------------------- button
+.btn {
+  background-color: $dark-blue;
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 170px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: $rounded-corners-big;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: 200ms all;
+  &:hover {
+    background-color: $dark-blue;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transform: scale(1.01);
+  }
+}
+.pageviews {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #999aaa;
+  letter-spacing: 2px;
+  @include flexing;
+}
+.price-heading {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #333769;
+}
+.month-styling{
+  font-size: 1.5rem;
+  color: #999aaa;
+}
+.my-awesome-line{
+  width: 100%;
+  height: 0.1px;
+  opacity: 0.3;
+}
+ul li{
+  color: #999aaa;
+  font-size: .8rem;
+  line-height: 25px;
+  padding-left: 10px;
+}
+.discounted{
+  background-color: $very-light-red;
+  color: $dark-red;
+  font-weight: bold;
+  border-radius: $rounded-corners-big;
+  padding: 5px;
+}
+.modal{
+  width: 500px;
+  height: 200px;
+  background-color: $light-blue-white;
+  position: absolute;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  @include flexing;
+  flex-direction: column;
+  border-radius: $rounded-corners-small;
+}
+
+
+.btn-modal-close{
+  width: 200px;
+  height: 70px;
+  border-radius: $rounded-corners-big;
+  border: none;
+  cursor: pointer;
+  transition: 200ms all;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+.btn-modal-close:hover{
+  transform: scale(1.05);
+}
+.final-heading{
+  background-image: url("/assets/images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200px;
+  margin-bottom: 50px;
+}
+.final-heading-big{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333769;
+
+}
+.final-heading-small{
+  font-size: 1.2rem;
+  color: #999aaa;
+}
